@@ -5,6 +5,6 @@
 # Generated Java Files
 
 target
-target/
+target/*
 
-bin/*.class
+bin/*
