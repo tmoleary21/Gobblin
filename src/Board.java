@@ -16,7 +16,7 @@ public class Board {
         String str = "";
         for(int i = 0; i < board.length; i++){
             for(int j = 0; j < board[i].length; j++){
-                str += String.format("%[10]s", board[i][j].currentColor);
+                str += String.format("%10s", board[i][j].currentColor);
                 if(j != board[i].length-1) str += ", ";
             }
             if(i != board.length-1) str += "\n";
@@ -56,6 +56,7 @@ public class Board {
         for(int i = 0; i < 4; i++){
             if(!player.color.equals(board[row][i].currentColor)){
                 winState.setWinState(false);
+                squares[i] = board[row][i];
                 return winState;
             }
         }
@@ -70,6 +71,7 @@ public class Board {
         for(int i = 0; i < 4; i++){
             if(!player.color.equals(board[i][col].currentColor)){
                 winState.setWinState(false);
+                squares[i] = board[i][col];
                 return winState;
             }
         }
@@ -85,6 +87,7 @@ public class Board {
         for(int i = 0; i < 4; i++){
             if(!player.color.equals(board[i][i].currentColor)){
                 winState.setWinState(false);
+                squares[i] = board[i][i];
                 return winState;
             }
         }
@@ -98,8 +101,9 @@ public class Board {
         WinningState winState = new WinningState(player);
         Square[] squares = new Square[4];
         for(int i = 0; i < 4; i++){
-            if(!player.color.equals(board[i][4-i].currentColor)){
+            if(!player.color.equals(board[i][3-i].currentColor)){
                 winState.setWinState(false);
+                squares[i] = board[i][3-i];
                 return winState;
             }
         }
