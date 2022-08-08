@@ -4,7 +4,15 @@ public class WinningState {
     public Square[] winningSquares;
     public Player winningPlayer;
 
-    public WinningState(boolean gameWon){
-        this.won = gameWon;
+    public WinningState(Player winningPlayer){
+        this.winningPlayer = winningPlayer;
+    }
+
+    public void setWinState(boolean won){
+        this.won = won;
+    }
+
+    public void setSquaresState(Square[] winningSquares){
+        this.winningSquares = winningSquares; 
     }
 }
