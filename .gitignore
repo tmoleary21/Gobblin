@@ -1,0 +1,10 @@
+# Idea Files
+
+.idea/
+
+# Generated Java Files
+
+target
+target/
+
+bin/*.class
