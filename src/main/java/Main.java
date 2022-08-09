@@ -5,8 +5,8 @@ public class Main {
     }
     
     public static void testWinning(){
-        Player player = new Player();
-        player.color = "red";
+        Player player1 = new Player("Player 1", "white");
+        Player player2 = new Player("Player 2", "black");
 
         //Back diagonal
         Board board = new Board();
