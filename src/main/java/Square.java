@@ -3,8 +3,13 @@ import java.util.Stack;
 public class Square {
 
     // member variables
-    String currentColor = "";
+    String currentColor = ""; // top color on square
     Stack<Piece> pieceStack = new Stack<>();  // pieceStack has access to pop(), peek(), push(), and size()
+    
+    public Square(String currentColor, Stack<Piece> pieceStack){
+        this.currentColor = currentColor;
+        this.pieceStack = pieceStack;
+    }
     
     public void addPiece(Piece piece) {
         pieceStack.push(piece);
