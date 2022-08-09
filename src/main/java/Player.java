@@ -1,10 +1,10 @@
 public class Player {
-    String color;
-    String name;
+    private String color;
+    private String name;
 
-    public Player(String color, String name) {
-        this.color = color;
+    public Player(String name, String color) {
         this.name = name;
+        this.color = color;
     }
 
     public String getColor() {
