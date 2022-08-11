@@ -1,51 +1,29 @@
-public class Main {
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+
+public class Main extends Application{
     
     public static void main(String[] args){
-        testWinning();
-    }
-    
-    public static void testWinning(){
+        launch(args);
+
         Player player1 = new Player("Player 1", "white");
         Player player2 = new Player("Player 2", "black");
+    }
 
-        //Back diagonal
-        Board board = new Board();
-        board.board[0][0].currentColor = "red";
-        board.board[1][1].currentColor = "red";
-        board.board[2][2].currentColor = "red";
-        board.board[3][3].currentColor = "red";
-        System.out.println(board.toString());
-        WinningState winState = board.hasWon(player, 1, 1);
-        System.out.println("Win? " + winState.won);
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("Gobblin"); //Stage is the window
         
-        //Forward diagonal
-        board = new Board();
-        board.board[0][3].currentColor = "red";
-        board.board[1][2].currentColor = "red";
-        board.board[2][1].currentColor = "red";
-        board.board[3][0].currentColor = "red";
-        System.out.println(board.toString());
-        winState = board.hasWon(player, 2, 1);
-        System.out.println("Win? " + winState.won);
+        StackPane root = new StackPane(); //StackPane is area within window with content. It can have multiple layers
+        Canvas canvas = new Canvas(400, 400);
+        root.getChildren().add(canvas);
+        GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        //Row
-        board = new Board();
-        board.board[2][0].currentColor = "red";
-        board.board[2][1].currentColor = "red";
-        board.board[2][2].currentColor = "red";
-        board.board[2][3].currentColor = "red";
-        System.out.println(board.toString());
-        winState = board.hasWon(player, 2, 2);
-        System.out.println("Win? " + winState.won);
-
-        //Column
-        board = new Board();
-        board.board[0][1].currentColor = "red";
-        board.board[1][1].currentColor = "red";
-        board.board[2][1].currentColor = "red";
-        board.board[3][1].currentColor = "red";
-        System.out.println(board.toString());
-        winState = board.hasWon(player, 1, 3);
-        System.out.println("Win? " + winState.won);
+        primaryStage.setScene(new Scene(root, 300, 250)); //Scene is container for scene graph
+        primaryStage.show();
     }
 }
