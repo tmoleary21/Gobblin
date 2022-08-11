@@ -33,3 +33,19 @@ The first player to align 4 gobblets in a row wins. The gobblets forming the lin
 **Draws:** The game is declared a draw if 3 repetitions of identical moves between whites and blacks occur or by mutual agreement between players.
 
 **Ages:** Gobblet is for adults only.
+
+---
+# Run and Deploy
+
+## Maven basics
+
+Check out this link for a quick guide to Maven commands.
+[https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
+
+## Running the game (dev):
+
+Command: `mvn clean javafx:run`
+This will clean the project, then compile and run with javafx.
+
+## Deployment
+
