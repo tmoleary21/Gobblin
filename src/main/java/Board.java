@@ -54,7 +54,7 @@ public class Board {
         WinningState winState = new WinningState(player);
         Square[] squares = new Square[4];
         for(int i = 0; i < 4; i++){
-            if(!player.color.equals(board[row][i].currentColor)){
+            if(!player.getColor().equals(board[row][i].currentColor)){
                 winState.setWinState(false);
                 squares[i] = board[row][i];
                 return winState;
@@ -69,7 +69,7 @@ public class Board {
         WinningState winState = new WinningState(player);
         Square[] squares = new Square[4];
         for(int i = 0; i < 4; i++){
-            if(!player.color.equals(board[i][col].currentColor)){
+            if(!player.getColor().equals(board[i][col].currentColor)){
                 winState.setWinState(false);
                 squares[i] = board[i][col];
                 return winState;
@@ -85,7 +85,7 @@ public class Board {
         WinningState winState = new WinningState(player);
         Square[] squares = new Square[4];
         for(int i = 0; i < 4; i++){
-            if(!player.color.equals(board[i][i].currentColor)){
+            if(!player.getColor().equals(board[i][i].currentColor)){
                 winState.setWinState(false);
                 squares[i] = board[i][i];
                 return winState;
@@ -101,7 +101,7 @@ public class Board {
         WinningState winState = new WinningState(player);
         Square[] squares = new Square[4];
         for(int i = 0; i < 4; i++){
-            if(!player.color.equals(board[i][3-i].currentColor)){
+            if(!player.getColor().equals(board[i][3-i].currentColor)){
                 winState.setWinState(false);
                 squares[i] = board[i][3-i];
                 return winState;
